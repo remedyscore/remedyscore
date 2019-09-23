@@ -1,0 +1,803 @@
+/*** GENERAL STYLING ***/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+    overflow-x: hidden;
+}
+
+html {
+	font-family: 'OpenSans-Regular', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5
+}
+
+body {
+	color: #515151;
+	background-color: #fff;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
+}
+
+a {
+	color: #268bd2;
+	text-decoration: none
+}
+
+a strong {
+	color: inherit
+}
+
+a:hover, a:focus {
+	text-decoration: underline
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin-bottom: .5rem;
+	font-weight: bold;
+	line-height: 1.25;
+	color: #313131;
+	text-rendering: optimizeLegibility
+}
+
+h1 {
+	font-size: 1.75rem
+}
+
+h2 {
+	margin-top: 1rem;
+	font-size: 1.50rem
+}
+
+h3 {
+	margin-top: 1.5rem;
+	font-size: 1.25rem
+}
+
+h4,h5,h6 {
+	margin-top: 1rem;
+	font-size: 1.00rem
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem
+}
+
+strong {
+	color: #303030
+}
+
+ul,ol,dl {
+	margin-top: 1rem;
+	margin-bottom: 1rem
+}
+
+dt {
+	font-weight: bold
+}
+
+dd {
+	margin-bottom: .5rem
+}
+
+hr {
+	position: relative;
+	margin: 1.5rem 0;
+	border: 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #fff
+}
+
+abbr {
+	font-size: 85%;
+	font-weight: bold;
+	color: #555;
+	text-transform: uppercase
+}
+
+abbr[title] {
+	cursor: help;
+	border-bottom: 1px dotted #e5e5e5
+}
+
+pre {
+	display: block;
+	overflow-x: auto;
+	max-width: 100%;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	font-size: .8rem;
+	line-height: 1.4;
+	white-space: pre;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: #f9f9f9
+}
+
+blockquote {
+	padding: .5rem 1rem;
+	margin: .8rem 0;
+	color: #7a7a7a;
+	border-left: .25rem solid #e5e5e5
+}
+
+blockquote p:last-child {
+	margin-bottom: 0
+}
+
+.message {
+	margin-bottom: 1rem;
+	padding: 1rem;
+	color: #717171;
+	background-color: #f9f9f9
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	margin: 0 0 1rem;
+	border-radius: 5px
+}
+
+table {
+	margin-bottom: 1rem;
+	width: 100%;
+	border: 1px solid #e5e5e5;
+	border-collapse: collapse
+}
+
+td,th {
+	padding: .25rem .5rem;
+	border: 1px solid #e5e5e5
+}
+
+tbody tr:nth-child(odd) td,tbody tr:nth-child(odd) th {
+	background-color: #f9f9f9
+}
+
+::-moz-selection {
+	background: #268bd2;
+	color: #fff
+}
+::selection {
+	background: #268bd2;
+	color: #fff
+}
+
+
+/*** FONT STYLES ***/
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.eot');
+    src: url('../fonts/OpenSans-Regular.eot')         format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular.woff')        format('woff'),
+         url('../fonts/OpenSans-Regular.ttf')         format('truetype'),
+         url('../fonts/OpenSans-Regular.svg')         format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot');
+    src: url('../fonts/fontello.eot')         format('embedded-opentype'),
+         url('../fonts/fontello.woff2')       format('woff2'),
+         url('../fonts/fontello.woff')        format('woff'),
+         url('../fonts/fontello.ttf')         format('truetype'),
+         url('../fonts/fontello.svg')         format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 fontello;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.icon-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+.icon-stack-1x {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    line-height: inherit;
+}
+
+.icon-stack-2x {
+    position: absolute;
+    right: 9px;
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+}
+
+.icon-inverse {
+  color: #ffffff;
+}
+
+
+/* Specific fonts */
+
+.icon-angle-double-left:before {
+  content: "\f100";
+}
+
+.icon-angle-double-right:before {
+  content: "\f101";
+}
+
+.icon-comments:before {
+    content: "\e802";
+}
+
+.icon-facebook-square:before {
+  content: "\f308";
+}
+
+.icon-google-plus-square:before {
+  content: "\f0d4";
+}
+
+.icon-instagram-square:before {
+  content: "\f32d";
+}
+
+.icon-linkedin-square:before {
+  content: "\f30c";
+}
+
+.icon-pinterest-square:before {
+  content: "\f0d3";
+}
+
+.icon-plus-circle:before {
+    content: "\e801";
+}
+
+.icon-reddit-square:before {
+  content: "\f1a2";
+}
+
+.icon-snapchat-square:before {
+  content: "\f2ad";
+}
+
+.icon-square:before {
+  content: "\f0c8";
+}
+
+.icon-tag:before {
+  content: "\e800";
+}
+
+.icon-twitter-square:before {
+  content: "\f304";
+}
+
+
+/*** HEADER ***/
+
+.page-header{
+    position: absolute;
+    height: 75px;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-bottom: 0;
+    background-color: #161B1F;
+    transition: all 0.15s ease-in-out 0s;
+    z-index: 1000;
+}
+
+.page-header .wrapper{
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-header .wrapper.no-max-width{
+    max-width:  none;
+}
+
+.page-header .wrapper:hover a {
+    opacity: 0.5;
+    transition: color 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+}
+
+.page-header .wrapper a:hover {
+    opacity: 1.0;
+    transition: color 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+}
+
+/* Header - Logo - Center */
+.page-header .logo{
+    position: absolute;
+    height: 34px;
+    width: 34px;
+    left: 50%;
+    top: 20px;
+    margin-left: -90px;
+    fill: #FFF;
+    z-index: 2;
+}
+
+
+.page-header .text{
+    position: absolute;
+    left: 50%;
+    margin-left: -45px;
+    line-height: 70px;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -1.5px;
+    color: #FFFFFF;
+}
+
+
+
+/*** PAGE ***/
+
+.page {
+	margin-bottom: 4em
+}
+
+.page .page-title {
+	color: #268bd2;
+	margin-top: 0;
+}
+
+
+/*** CONTENTS CONTAINER ***/
+
+.container {
+    min-height: 1200px;
+	max-width: 28rem;
+    padding: 7.5rem 1rem 0rem 1rem;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.container a {
+	color: #268bd2
+}
+
+
+/*** POSTS ***/
+
+.post {
+	margin-bottom: 3em
+}
+
+.post.include-social-links{
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.post h1,.post h2,.post h3,.post h4,.post h5,.post h6 {
+	font-weight: 700
+}
+
+.post .post-title {
+	color: #268bd2;
+	margin-top: 0
+}
+
+.post .post-subtitle{
+    display: inline-block;
+	margin-bottom: 1rem;
+}
+
+.post .post-date {
+	display: inline-block;
+	margin-top: -.5rem;
+	color: #9a9a9a
+}
+
+.post .post-more {
+	margin-top: .5em;
+	text-align: right
+}
+
+.post .post-more .icon {
+	margin-right: .2em
+}
+
+.post article {
+	line-height: 1.4rem;
+    border-bottom: 1px solid #fff
+}
+
+.post img {
+	margin: 0 auto 1rem auto
+}
+
+
+/*** TAGS ***/
+
+.post-tag {
+	display: inline-block;
+	background: rgba(106,159,181,0.15);
+	padding: 0rem 0.5rem;
+	margin: 0.5rem 0.5rem 0rem 0rem;
+	border-radius: 4px;
+	color: #268bd2;
+	font-size: 90%;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out
+}
+
+.post-tag:before {
+	content: "\e800";
+	font-family: fontello;
+	padding-right: .5em
+}
+
+.post-tag:hover {
+	text-decoration: none;
+	background: #268bd2;
+	color: #fff
+}
+
+.tags-divider{
+    padding: 0px 5px;
+}
+
+.tags-container{
+    display: inline-block;
+}
+
+.tags-expo:target:before {
+	content: "";
+	display: block;
+	height: 72px;
+	margin: -72px 0 0
+}
+
+.tags-expo .tags-expo-section ul {
+	list-style-type: circle;
+	list-style-position: inside;
+	padding: 0
+}
+
+.tags-expo .tags-expo-section ul li {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+	padding: 0 1rem
+}
+
+.tags-expo .tags-expo-section ul li:hover {
+	list-style-type: disc;
+	margin-left: 20px;
+}
+
+.tags-expo .tags-expo-section a {
+	text-decoration: none
+}
+
+.tags-expo .tags-expo-section .post-date {
+	display: inline-block;
+	font-size: 80%;
+	color: #9a9a9a;
+	margin: 0;
+	padding: 0
+}
+
+
+/*** IMAGES ***/
+
+.header-image{
+    padding: 15px 0px;
+}
+
+.max-height-200px{
+    max-height: 200px;
+}
+
+
+/*** SHARING ***/
+
+.social-links{
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.social-links .share,
+.social-links .follow{
+    display: inline-block;
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.social-links .share{
+    float: left;
+}
+
+.social-links .follow{
+    float: right;
+}
+
+.social-links .share span,
+.social-links .follow span{
+    font-weight: bold;
+}
+
+
+/*** RELATED POSTS ***/
+
+.related {
+	padding-top: 0.25rem;
+	padding-bottom: 2rem;
+	border-top: 1px solid #eee
+}
+
+.related-posts {
+	padding-left: 0;
+	list-style: none
+}
+
+.related-posts li {
+	padding-bottom: 15px;
+}
+
+.related-posts li small {
+    display: inline-block;
+    font-size: 80%;
+    color: #9a9a9a;
+    margin: 0;
+    padding: 0;
+}
+
+.related-posts li a:hover {
+	color: #268bd2;
+	text-decoration: none
+}
+
+.related-posts li a:hover small {
+	color: inherit
+}
+
+
+
+/*** COMMENTS ***/
+
+.comments{
+    margin: 40px 0px;
+}
+
+/*** PAGINATION ***/
+
+.pagination {
+    padding: 2em 0em;
+    text-align: center;
+    color: #999999;
+}
+
+.pagination .page-number {
+    padding: 0 1em;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.pagination a.newer-posts {
+    text-decoration: none;
+}
+
+.paginator-arrow{
+    font-size: 22px;
+}
+
+
+/*** FOOTER ***/
+
+.page-footer{
+    width: 100%;
+    background-color: #161B1F;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+.footer-absolute{
+    position: absolute;
+    bottom: 0;
+}
+
+.page-footer .top-menu{
+    display: inline-block;
+    width: 100%;
+    max-width: 1000px;
+    padding-left: 0;
+}
+
+.page-footer .top-menu .menu-item{
+    display: inline-block;
+    height: 100%;
+    width: initial;
+    padding: 0px 15px;
+    margin-top: 0;
+    line-height: 50px;
+    text-align: center;
+    font-size: 11px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    list-style: none;
+    cursor: pointer;
+}
+
+.page-footer .top-menu .menu-item a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.page-footer .copyright{
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 25px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #6C7980;
+}
+
+.footer:hover a {
+    opacity: 0.5;
+    transition: color 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+}
+
+.footer a:hover {
+    opacity: 1.0;
+    transition: color 0.3s ease-in-out 0s, opacity 0.3s ease-in-out 0s;
+}
+
+
+/*** ERROR: 404 NOT FOUND ***/
+
+.error-page{
+    text-align: center;
+}
+
+.error-text {
+    font-size: 1.00rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.error-link{
+    font-size: 1.00rem;
+}
+
+
+/*** MEDIA QUERIES ***/
+
+@media (min-width: 610px) {
+
+	html {
+		font-size: 20px
+	}
+
+	blockquote {
+		padding-right: 5rem;
+		padding-left: 1.25rem
+	}
+
+	.container {
+		max-width: 32rem
+	}
+
+	.container.content {
+		padding-top: 6.5rem
+	}
+
+
+    .post {
+		font-size: .8rem
+	}
+
+	.post h1 {
+		font-size: 1.50rem
+	}
+
+	.post h2 {
+		margin: 2em 0 1em 0;
+		font-size: 1.25rem
+	}
+
+	.post h3,.post h4,.post h5,.post h6 {
+		margin: 2em 0 1em 0;
+		font-size: 1.0rem
+	}
+
+
+	.tags-expo .tags-expo-list {
+		font-size: 0.9rem
+	}
+
+	.tags-expo .tags-expo-list .post-tag {
+		margin: .2em .3em
+	}
+}
+
+
+@media (min-width: 775px) {
+
+  .page-footer .top-menu .menu-item{
+        width: 19%;
+        padding: 0px;
+  }
+
+}
+
+
+@media (min-width: 895px) {
+
+	.container {
+		max-width: 40rem
+	}
+
+}

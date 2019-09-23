@@ -1,0 +1,68 @@
+#
+# CORE SETTINGS:  Specific settings underpinning core functionality of website
+#
+
+# Version:  Version of Jekyll being used to compile page
+version: v4.0.0
+
+
+# Markdown:  Set specific flavor of markdown to kramdown
+markdown: kramdown
+
+
+# Timezone:  Set timezone of the website 
+timezone: America/New_York
+
+
+# Gems:  Use the following plug-ins
+gems:
+  - jekyll-paginate   # Break a series of posts into individual pages
+
+
+# URLs: The URL for the repository and any base url beyond root
+baseurl: 'http://www.remedyscore.com/blog'
+tag_page: '/tags/'
+
+
+# Permalinks:  Format links to posts as "/YYYY/MM/DD/title/" not "/YYYY/MM/DD/title.html"
+permalink: pretty
+
+
+# Except Separator:  Define code to select the portion of a post used as an except
+excerpt_separator: <!--more-->
+
+
+# Pagination:  Configure pagination settings
+paginate: 5                  # Turn every five posts into a separate page
+paginate_path: "/page:num/"  # Each page will be titled /page[#]/index.html
+
+
+# Exclude:  Exclude directories and/or files from the conversion
+exclude:
+- CNAME
+
+
+#
+# WEBPAGE STATIC CONTENT:  Customize static text associated with the website
+#
+
+# Name:  Name of the site displayed in the header
+name: 'RemedyScore'
+
+# Logo:  Path to the website logo
+logo: '/content/images/logo.png'
+
+
+#
+# WEBPAGE VARIABLE CONTENT:  Activate and deactivate variable content within the website
+#
+
+# Social Media Links:  Activates social media links in the footer for each supplied username
+#twitter: remedyscore
+#instagram: remedyscore
+
+# Disqus:  Activates Disqus commenting on posts using a supplied Disqus shortname
+disqus: remedyscore
+
+# Google Analytics:  Activates Google Analytics web tracking code (e.g. UA-2110908-2)
+google_analytics: 'UA-79704439-1'

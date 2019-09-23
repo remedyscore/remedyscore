@@ -1,0 +1,113 @@
+---
+layout: default
+---
+
+<!-- POST -->
+<div class="post include-social-links">
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    <span class="post-subtitle">
+
+        <span class="post-date">{{ page.date |  date: '%B %d, %Y' }}</span>
+
+        {% if page.tags %}
+
+          <span class="tags-divider"> | </span>
+
+          <span class="tags-container">
+              {% for tag in page.tags %}
+                  <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+              {% endfor %}
+          </span>
+
+        {% endif %}
+
+    </span>
+
+    <article>{{ content }}</article>
+
+</div>
+
+
+<!-- SOCIAL MEDIA SHARING -->
+<div class="social-links">
+
+    <div class="share">
+
+        <span>Share: </span>
+
+        {% capture full_url %}{{ site.baseurl }}{{ page.url }}{% endcapture %}
+
+        <a href="//twitter.com/share?text={{ page.title | cgi_escape }}&url={{ full_url }}&via={{site.twitter}}"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=255'); return false;">
+            <i class="icon icon-twitter-square icon-lg"></i>
+        </a>
+
+        <a href="//www.facebook.com/sharer.php?t={{ page.title | cgi_escape }}&u={{ full_url }}"
+            onclick="window.open(this.href, 'facebook-share', 'width=550,height=255'); return false;">
+            <i class="icon icon-facebook-square icon-lg"></i>
+        </a>
+
+        <a href="//www.pinterest.com/pin/create/button/?description={{ page.title | cgi_escape }}&url={{ full_url }}&media={{ site.url }}{{ site.logo | prepend: site.baseurl }}"
+            onclick="window.open(this.href, 'pinterest-share', 'width=550,height=255');return false;">
+            <i class="icon icon-pinterest-square icon-lg"></i>
+        </a>
+
+    </div>
+
+    <div class="follow">
+
+        <span>Follow: </span>
+
+        {% capture full_url %}{{ site.baseurl }}{{ page.url }}{% endcapture %}
+
+        {% if site.twitter %}
+            <a href="//twitter.com/{{site.twitter}}" target="_blank">
+                <i class="icon icon-twitter-square icon-lg"></i>
+            </a>
+        {% endif %}
+
+        {% if site.instagram %}
+            <a href="//www.instagram.com/{{site.instagram}}" target="_blank">
+                <i class="icon icon-instagram-square icon-lg"></i>
+            </a>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<!-- DISQUS -->
+{% if site.disqus %}
+
+    <div class="comments">
+
+        <h3>Comments</h3>
+
+        <div id="disqus_thread"></div>
+
+        <script>
+
+            var disqus_config = function () {
+                this.page.url        = '{{ site.baseurl }}{{ page.url }}';  // Replace PAGE_URL with page's URL variable
+                this.page.identifier = '{{ page.id }}';                     // Replace PAGE_IDENTIFIER with page's unique identifier variable
+            };
+
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = '//{{ site.disqus }}.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+
+        </script>
+
+        <noscript>
+            Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+        </noscript>
+
+    </div>
+
+{% endif %}
